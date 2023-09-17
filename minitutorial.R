@@ -58,12 +58,25 @@ str(datafram_name)
 subset(dataframe_name , column_name == 'value')
 
 #Logical operators in R
-| First Header  | Second Header |
-| ------------- | ------------- |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
+| OPERATORS | NAME | DESCRIPTION |EXAMPLE|
+| --------------- | --------------- | --------------- | --------------- |
+| & | AND | It returns true when both conditions are true | c(20, 30) & c(30, 10) |
+| && | AND | Same as the above but, It works on single element | If (age > 18 && age <= 25) |
+| | | OR | It returns true when at-least one of the condition is true | c(20, 30) | c(30, 10) |
+| || | OR | Same as logical OR but, It works on single element | If (age == 35 || age < 60) |
+#more can be find in https://www.w3schools.com/r/r_operators.asp
 
-#&	AND	It returns true when both conditions are true	c(20, 30) & c(30, 10)
+subset(dataframe_name , column_name == 'Drama' | column_name == 4016934)
 
+subset(dataframe_name , column_name == 'Drama' & column_name == 4016934)
 
+subset(dataframe_name , column_name %in%c(48473,53198))
 
+subset(dataframe_name , !column_name %in%c(48473,53198))
+
+#Type casting 
+dataframe$column_name <- as.Date(dataframe$column_name, format = '%m/%d/%y')
+#Warning! if you get any error you can use below code
+dataframe$column_name <- as.Date(as.character(dataframe$column_name), format = '%m/%d/%y')
+
+subset(dataframe_name , date_column > as.Date('date_value'))
