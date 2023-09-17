@@ -49,5 +49,21 @@ left_mergeddf
 right_mergeddf <- merge(x = moviedata , y = genredata , by.x='id', by.y='movie_id' , all.y=TRUE)
 right_mergeddf
 
+#Subsetting Cases From a Data Frame in R 
+#determin the structure of object in R
+str(datafram_name)
+#Warning! str() in not for type casting like Python. it's for structure of object.
+
+#subset function
+subset(dataframe_name , column_name == 'value')
+
+#Logical operators in R
+| First Header  | Second Header |
+| ------------- | ------------- |
+| Content Cell  | Content Cell  |
+| Content Cell  | Content Cell  |
+
+#&	AND	It returns true when both conditions are true	c(20, 30) & c(30, 10)
+
 
 
