@@ -80,3 +80,24 @@ dataframe$column_name <- as.Date(dataframe$column_name, format = '%m/%d/%y')
 dataframe$column_name <- as.Date(as.character(dataframe$column_name), format = '%m/%d/%y')
 
 subset(dataframe_name , date_column > as.Date('date_value'))
+
+#Selecting one variable from dataframe
+dataframe_name$column_name
+#it returns variable as a vector 
+subset(dataframe_name , select = column_name)
+#it returns the variable as a data frame
+
+#selecting multiple variables 
+subset(dataframe_name , select=c(column_name,column_name,column_name))
+
+#removing one variable from data frame
+dataframe_name$column_name <- NULL
+subset(datafra,e_name , select = -column_name)
+subset(dataframe_name , select= -c(column_name,column_name,column_name))
+
+#writing data frame  from R
+write.csv(dataframe_name , 'file_saving_name')
+
+#making copy of data frame
+copy_name <- cbind(dataframe_name)
+
