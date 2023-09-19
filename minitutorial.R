@@ -18,6 +18,69 @@ print(personaldata)
 #show just the name of columns name 
 names(personaldata)
 
+#creating numbers vectors
+x = c(1,2,3,4,5,6,7)
+# creating integers vector 
+x = 2:10
+x = seq(3, 10)
+x = seq(10)
+
+#creating the vector of characters
+x = c('male','famel')
+#Warning! the '=' and '<-' are equal in R
+
+#creating the sequence of integer values
+seq(from=1 , to=8 , by=1)
+#seq.int will be rounded up if fractional
+seq.int(from=1, to=4 , by= 0.3)
+#creating the sequence of non-integer values
+seq(from=1 , to=8 , by=0.25)
+#creating the sequence of values with specific length
+seq(from=1, to=4 , length.out= 5)
+seq(3, 10, along.with = 1:5)
+
+#repeating the characters
+rep(1,times=10)
+rep('amir',times=10)
+rep(seq(1,4, by=0.5),times=5)
+rep(c('male','female') , times=3)
+
+#creating the vectors and some mathematical things
+x = 1:5
+y = c(1,3,5,7,9)
+x+10
+x-10
+x*7
+x/7
+
+ # if the length of two vectors are same, we are able to add/multiple/devide 
+x+y
+x-y
+x/y
+y/x
+
+#recaling the specific elements in vector
+x[3]
+y[1]
+#Warning! R does not count pythonic (from 0) the index starts from 1 
+x[-3]  
+x[1:3]
+x[c(1,3,5)]
+x[-c(1,3,5)]
+
+#conditional slicing
+x[x>3]
+
+#making matix
+matrix(1:9, nrow =3)
+matrix(1:9, nrow =3 , byrow=TRUE)
+
+#get specific element in matrix
+c = matrix(1:9, nrow =3 , byrow=TRUE)
+c[1,3]
+c[c(1,2),2]
+c[3,]
+
 #removing the data frame 
 remove(personaldata)
 
@@ -100,4 +163,3 @@ write.csv(dataframe_name , 'file_saving_name')
 
 #making copy of data frame
 copy_name <- cbind(dataframe_name)
-
