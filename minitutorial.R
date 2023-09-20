@@ -81,6 +81,19 @@ c[1,3]
 c[c(1,2),2]
 c[3,]
 
+#dimansion of data frame
+dim(dataframe_name)
+dataframe_name[1:5,1:3]
+
+#finding mean of column
+mean(dataframe_name$column_name)
+mean(dataframe_name$column_name[dataframe_name$column_name == 12])
+mean(dataframe_name$column_name[dataframe_name$column_name == 1999])
+
+#creating the new data frame by subsetting 
+new_dataframe_name = dataframe_name[dataframe_name$column_name == 1997,]
+df4 = df[df$year == 1997 & df$runtime >116,]
+
 #removing the data frame 
 remove(personaldata)
 
