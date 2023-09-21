@@ -85,6 +85,19 @@ c[3,]
 dim(dataframe_name)
 dataframe_name[1:5,1:3]
 
+#logic statments
+data()
+df <- trees
+temp<-df$Volume >20
+temp[1:10]
+df$Volume[1:10]
+temp2 <- as.numeric(temp)
+temp2
+temp3 <- df$Volume >15 & df$Height >66
+temp3
+new_df <- cbind(df , temp3)
+new_df
+
 #finding mean of column
 mean(dataframe_name$column_name)
 mean(dataframe_name$column_name[dataframe_name$column_name == 12])
@@ -95,7 +108,10 @@ new_dataframe_name = dataframe_name[dataframe_name$column_name == 1997,]
 df4 = df[df$year == 1997 & df$runtime >116,]
 
 #removing the data frame 
-remove(personaldata)
+remove(dataframe_name)
+
+#removing all objects in r
+rm(list = ls())
 
 #merging data in R
 #Warning! this function is able to merge just two data frame at moment
