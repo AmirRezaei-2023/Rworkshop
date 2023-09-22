@@ -87,3 +87,24 @@ df3 %>%
   labs(x = 'Engine Size' , 
        y = 'MpG')+
   theme_bw()
+
+
+df3 %>% 
+  filter(cty<35)%>%
+  ggplot(aes(displ , hwy,color=drv))+
+  geom_point()+
+  geom_smooth(method = lm , se=FALSE)+
+  labs(x = 'Engine Size' , 
+       y = 'MPG on Highway')+
+  theme_minimal()+
+  ggsave('Highway.jpg')
+
+df3 %>% 
+  filter(cty<35)%>%
+  ggplot(aes(x=displ , y=hwy))+
+  geom_point(aes(colour=drv))+
+  geom_smooth(method = lm , se=FALSE)+
+  labs(x = 'Engine Size' , 
+       y = 'MPG on Highway')+
+  theme_minimal()
+
