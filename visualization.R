@@ -1,5 +1,5 @@
 getwd()
-setwd('C:/Users/ASUS/Desktop/r/Rworkshop')
+setwd('C:/Users/ASUS/Desktop/rworkshop/Rworkshop')
 df <- read.csv('LungCapData.xls - LungCapData.txt.csv')
 
 #barplot
@@ -80,3 +80,33 @@ box()
 axis(2 , at=seq(0,20,2), seq(0,20,2) , las=1)
 axis(1 , at=c(1.5,3.5,5.5,7.5), labels = c('<13' , '14-15','16-17','18+') , las=1)
 legend(x=7 ,y=4.5 , legend = c('Non-smoker','Smoker'),col=c(2,4),pch=15,cex=0.8)
+
+#histogram
+hist(df$LungCap)
+
+#using density instead of frequency
+hist(df$LungCap , freq = FALSE)
+
+#set the breaks 
+#remember number of bins = number of breaks + 1
+hist(df$LungCap , breaks= 7)
+
+hist(df$LungCap , breaks= 11)
+
+hist(df$LungCap ,xlim =c(0,16), breaks= seq(from=0, to=16, by=2))
+
+hist(df$LungCap ,xlim =c(0,16), las = 1 ,breaks= seq(from=0, to=16, by=2), freq = FALSE,
+     ylim = c(0,0.2))
+
+lines(density(df$LungCap))
+#Warning! don't try line(density) on frequency histogram plot
+
+lines(density(df$LungCap), col =2 ,lwd=3)
+
+#stem and leaf
+female_df <- df$LungCap[df$Gender == 'female']
+female_df
+
+stem(female_df)
+
+stem(female_df , scale = 2)
